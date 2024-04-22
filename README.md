@@ -7,17 +7,17 @@ If you don't know what Mercure is, take a look here: (https://github.com/dunglas
 
 You can install via Gradle or Maven. Whatever floats your boat. :)
 
-Gradle:
+Gradle #TODO:
 ```groovy
-implementation 'com.vitorvillar:mercure:1.0.0'
+implementation 'com.mattsmeets:mercure:1.0.0'
 ```
 
 Maven:
 ```xml
 <dependency>
-  <groupId>com.vitorvillar</groupId>
+  <groupId>com.mattsmeets</groupId>
   <artifactId>mercure</artifactId>
-  <version>1.0.0</version>
+  <version>0.14.4-0</version>
   <type>pom</type>
 </dependency>
 ```
@@ -30,11 +30,11 @@ want to publish, just create a new `Message` object.
 Here is an example:
 
 ```java
-package com.vitorvillar.test;
+package com.mattsmeets.test;
 
-import com.vitorvillar.mercure.exceptions.HubNotFoundException;
-import com.vitorvillar.mercure.exceptions.PublishRejectedException;
-import com.vitorvillar.mercure.exceptions.UnauthorizedPublisherException;
+import exceptions.com.mattsmeets.mercure.HubNotFoundException;
+import exceptions.com.mattsmeets.mercure.PublishRejectedException;
+import exceptions.com.mattsmeets.mercure.UnauthorizedPublisherException;
 
 public class Main {
 

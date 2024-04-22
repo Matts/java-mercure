@@ -1,4 +1,4 @@
-package com.vitorvillar.mercure.exceptions;
+package com.mattsmeets.mercure.exceptions;
 
 public class HubNotFoundException extends Exception {
 }

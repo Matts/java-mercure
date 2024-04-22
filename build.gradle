@@ -2,7 +2,7 @@ apply plugin: 'maven-publish'
 apply plugin: 'signing'
 apply plugin: 'java-library'
 
-group 'com.vitorvillar'
+group 'com.mattsmeets'
 version '1.0-RELEASE'
 
 sourceCompatibility = 1.11
@@ -61,7 +61,7 @@ publishing {
     publications {
         mavenJava(MavenPublication) {
             customizePom(pom)
-            groupId 'com.vitorvillar'
+            groupId 'com.mattsmeets'
             artifactId 'mercure'
             version '1.0.0'
 
@@ -127,28 +127,31 @@ def customizePom(pom) {
             name 'Java Mercure'
             url 'https://github.com/vitorluis/java-mercure'
             organization {
-                name 'com.vitorvillar'
-                url 'https://vitorvillar.com'
+                name 'com.mattsmeets'
+                url 'https://github.com/matts'
             }
             issueManagement {
                 system 'GitHub'
-                url 'https://github.com/vitorluis/java-mercure/issues'
+                url 'https://github.com/matts/java-mercure/issues'
             }
             licenses {
                 license {
                     name 'MIT License'
-                    url 'https://github.com/vitorluis/java-mercure/blob/master/LICENSE'
+                    url 'https://github.com/matts/java-mercure/blob/master/LICENSE'
                     distribution 'repo'
                 }
             }
             scm {
-                url 'https://github.com/vitorluis/java-mercure'
-                connection 'scm:git:git@github.com:vitorluis/java-mercure.git'
-                developerConnection 'scm:git:https://github.com/vitorluis/java-mercure.git'
+                url 'https://github.com/matts/java-mercure/java-mercure'
+                connection 'scm:git:git@github.com:matts/java-mercure.git'
+                developerConnection 'scm:git:https://github.com/matts/java-mercure.git'
             }
             developers {
                 developer {
                     name 'Vitor Villar'
+                }
+                developer {
+                    name 'Matt Smeets'
                 }
             }
         }

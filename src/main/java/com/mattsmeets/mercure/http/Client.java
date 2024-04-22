@@ -1,9 +1,10 @@
-package com.vitorvillar.mercure.http;
+package com.mattsmeets.mercure.http;
 
 
-import com.vitorvillar.mercure.http.exceptions.ForbiddenException;
-import com.vitorvillar.mercure.http.exceptions.NotFoundException;
-import com.vitorvillar.mercure.http.exceptions.UnauthorizedException;
+import com.mattsmeets.mercure.http.exceptions.ForbiddenException;
+import com.mattsmeets.mercure.http.exceptions.NotFoundException;
+import com.mattsmeets.mercure.http.exceptions.UnauthorizedException;
+import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
@@ -32,21 +33,21 @@ public class Client {
 
     public String sendRequest(Map<String, String> postData) throws UnauthorizedException, ForbiddenException,
             NotFoundException {
-        var responseContent = "";
-        var request = new HttpPost(this.url);
+        String responseContent = "";
+        HttpPost request = new HttpPost(this.url);
         request.addHeader("Authorization", "Bearer " + this.authorizationToken);
         request.addHeader("Content-Type", "application/x-www-form-urlencoded");
 
         List<NameValuePair> parameters = new ArrayList<>();
 
-        for (var entry : postData.entrySet()) {
+        for (Map.Entry<String,String> entry : postData.entrySet()) {
             parameters.add(new BasicNameValuePair(entry.getKey(), entry.getValue()));
         }
 
         try {
             request.setEntity(new UrlEncodedFormEntity(parameters, "UTF-8"));
 
-            var response = this.httpClient.execute(request);
+            HttpResponse response = this.httpClient.execute(request);
             if (response.getEntity() != null) {
                 responseContent = EntityUtils.toString(response.getEntity());
             }

@@ -1,4 +1,4 @@
-package com.vitorvillar.mercure;
+package com.mattsmeets.mercure;
 
 import java.util.UUID;
 
@@ -7,7 +7,7 @@ public class Message {
     private UUID id;
     private String data;
     private String topic;
-    private Boolean private;
+    private Boolean privateMessage;
     private String type;
 
     public Message(String data, String topic) {
@@ -16,11 +16,11 @@ public class Message {
         this.id = UUID.randomUUID();
     }
 
-    public Message(UUID id, String data, String topic, Boolean private, String type) {
+    public Message(UUID id, String data, String topic, Boolean privateMessage, String type) {
         this.id = id;
         this.data = data;
         this.topic = topic;
-        this.private = private;
+        this.privateMessage = privateMessage;
         this.type = type;
     }
 
@@ -49,11 +49,11 @@ public class Message {
     }
 
     public Boolean isPrivate() {
-        return private;
+        return privateMessage;
     }
 
-    public void setPrivate(Boolean private) {
-        this.private = private;
+    public void setPrivate(Boolean isPrivate) {
+        this.privateMessage = isPrivate;
     }
 
     public String getType() {

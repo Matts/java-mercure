@@ -1,12 +1,12 @@
-package com.vitorvillar.mercure;
+package com.mattsmeets.mercure;
 
-import com.vitorvillar.mercure.exceptions.HubNotFoundException;
-import com.vitorvillar.mercure.exceptions.PublishRejectedException;
-import com.vitorvillar.mercure.exceptions.UnauthorizedPublisherException;
-import com.vitorvillar.mercure.http.Client;
-import com.vitorvillar.mercure.http.exceptions.ForbiddenException;
-import com.vitorvillar.mercure.http.exceptions.NotFoundException;
-import com.vitorvillar.mercure.http.exceptions.UnauthorizedException;
+import com.mattsmeets.mercure.exceptions.HubNotFoundException;
+import com.mattsmeets.mercure.exceptions.PublishRejectedException;
+import com.mattsmeets.mercure.exceptions.UnauthorizedPublisherException;
+import com.mattsmeets.mercure.http.Client;
+import com.mattsmeets.mercure.http.exceptions.ForbiddenException;
+import com.mattsmeets.mercure.http.exceptions.NotFoundException;
+import com.mattsmeets.mercure.http.exceptions.UnauthorizedException;
 
 import java.util.HashMap;
 import java.util.UUID;
@@ -21,7 +21,7 @@ public class Publisher {
 
     public Message publish(Message message) throws UnauthorizedPublisherException, PublishRejectedException,
             HubNotFoundException {
-        var parameters = new HashMap<String, String>();
+        HashMap<String,String> parameters = new HashMap<String, String>();
         parameters.put("data", message.getData());
         parameters.put("topic", message.getTopic());
         parameters.put("id", message.getId().toString());
@@ -35,7 +35,7 @@ public class Publisher {
         }
 
         try {
-            var messageId = this.httpClient.sendRequest(parameters);
+            String messageId = this.httpClient.sendRequest(parameters);
             message.setId(UUID.fromString(messageId));
 
             return message;
