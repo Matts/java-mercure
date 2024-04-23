@@ -9,13 +9,13 @@ You can install via Gradle or Maven. Whatever floats your boat. :)
 
 Gradle #TODO:
 ```groovy
-implementation 'com.mattsmeets:mercure:1.0.0'
+implementation 'io.github.matts:mercure:1.0.0'
 ```
 
 Maven:
 ```xml
 <dependency>
-  <groupId>com.mattsmeets</groupId>
+  <groupId>io.github.matts</groupId>
   <artifactId>mercure</artifactId>
   <version>0.14.4-0</version>
   <type>pom</type>
@@ -30,11 +30,11 @@ want to publish, just create a new `Message` object.
 Here is an example:
 
 ```java
-package com.mattsmeets.test;
+package io.github.matts.test;
 
-import exceptions.com.mattsmeets.mercure.HubNotFoundException;
-import exceptions.com.mattsmeets.mercure.PublishRejectedException;
-import exceptions.com.mattsmeets.mercure.UnauthorizedPublisherException;
+import exceptions.io.github.matts.mercure.HubNotFoundException;
+import exceptions.io.github.matts.mercure.PublishRejectedException;
+import exceptions.io.github.matts.mercure.UnauthorizedPublisherException;
 
 public class Main {
 

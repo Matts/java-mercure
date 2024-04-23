@@ -1,4 +1,4 @@
-package com.mattsmeets.mercure.auth;
+package io.github.matts.mercure.auth;
 
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
@@ -6,7 +6,6 @@ import io.jsonwebtoken.SignatureAlgorithm;
 
 import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class JWTFactory {

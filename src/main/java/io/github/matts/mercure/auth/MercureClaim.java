@@ -1,4 +1,4 @@
-package com.mattsmeets.mercure.auth;
+package io.github.matts.mercure.auth;
 
 import java.util.ArrayList;
 import java.util.List;

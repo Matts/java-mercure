@@ -1,12 +1,12 @@
-package com.mattsmeets.mercure;
+package io.github.matts.mercure;
 
-import com.mattsmeets.mercure.exceptions.HubNotFoundException;
-import com.mattsmeets.mercure.exceptions.PublishRejectedException;
-import com.mattsmeets.mercure.exceptions.UnauthorizedPublisherException;
-import com.mattsmeets.mercure.http.Client;
-import com.mattsmeets.mercure.http.exceptions.ForbiddenException;
-import com.mattsmeets.mercure.http.exceptions.NotFoundException;
-import com.mattsmeets.mercure.http.exceptions.UnauthorizedException;
+import io.github.matts.mercure.exceptions.HubNotFoundException;
+import io.github.matts.mercure.exceptions.PublishRejectedException;
+import io.github.matts.mercure.exceptions.UnauthorizedPublisherException;
+import io.github.matts.mercure.http.Client;
+import io.github.matts.mercure.http.exceptions.ForbiddenException;
+import io.github.matts.mercure.http.exceptions.NotFoundException;
+import io.github.matts.mercure.http.exceptions.UnauthorizedException;
 
 import java.util.HashMap;
 import java.util.UUID;

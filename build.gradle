@@ -2,7 +2,7 @@ apply plugin: 'maven-publish'
 apply plugin: 'signing'
 apply plugin: 'java-library'
 
-group 'com.mattsmeets'
+group 'io.github.matts'
 version '1.0-RELEASE'
 
 sourceCompatibility = 1.11
@@ -61,7 +61,7 @@ publishing {
     publications {
         mavenJava(MavenPublication) {
             customizePom(pom)
-            groupId 'com.mattsmeets'
+            groupId 'io.github.matts'
             artifactId 'mercure'
             version '1.0.0'
 
@@ -127,7 +127,7 @@ def customizePom(pom) {
             name 'Java Mercure'
             url 'https://github.com/vitorluis/java-mercure'
             organization {
-                name 'com.mattsmeets'
+                name 'io.github.matts'
                 url 'https://github.com/matts'
             }
             issueManagement {

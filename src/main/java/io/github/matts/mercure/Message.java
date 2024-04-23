@@ -1,4 +1,4 @@
-package com.mattsmeets.mercure;
+package io.github.matts.mercure;
 
 import java.util.UUID;
 

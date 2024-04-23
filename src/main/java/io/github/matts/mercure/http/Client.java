@@ -1,9 +1,9 @@
-package com.mattsmeets.mercure.http;
+package io.github.matts.mercure.http;
 
 
-import com.mattsmeets.mercure.http.exceptions.ForbiddenException;
-import com.mattsmeets.mercure.http.exceptions.NotFoundException;
-import com.mattsmeets.mercure.http.exceptions.UnauthorizedException;
+import io.github.matts.mercure.http.exceptions.ForbiddenException;
+import io.github.matts.mercure.http.exceptions.NotFoundException;
+import io.github.matts.mercure.http.exceptions.UnauthorizedException;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.NameValuePair;

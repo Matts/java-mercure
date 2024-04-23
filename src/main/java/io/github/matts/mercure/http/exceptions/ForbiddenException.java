@@ -1,4 +1,4 @@
-package com.mattsmeets.mercure.http.exceptions;
+package io.github.matts.mercure.http.exceptions;
 
 public class ForbiddenException extends Exception {
     public ForbiddenException(String message) {
