@@ -7,9 +7,9 @@ If you don't know what Mercure is, take a look here: (https://github.com/dunglas
 
 You can install via Gradle or Maven. Whatever floats your boat. :)
 
-Gradle #TODO:
+Gradle:
 ```groovy
-implementation 'io.github.matts:mercure:1.0.0'
+implementation 'io.github.matts:mercure:0.14.4-1'
 ```
 
 Maven:
@@ -17,7 +17,7 @@ Maven:
 <dependency>
   <groupId>io.github.matts</groupId>
   <artifactId>mercure</artifactId>
-  <version>0.14.4-0</version>
+  <version>0.14.4-1</version>
   <type>pom</type>
 </dependency>
 ```
@@ -51,6 +51,10 @@ public class Main {
 
 ```
 
+## Versioning
+
+This project is prefixed by the version of the Mercure protocol it supports, followed by a build number. The current version is 0.14.4-1
+
 ## Credits
 
-Created and maintained by Vitor Villar <vitor.luis98@gmail.com>
+Forked from Vitor Villar https://github.com/vitorluis/java-mercure
