@@ -7,6 +7,7 @@ import io.github.matts.mercure.http.exceptions.UnauthorizedException;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.NameValuePair;
+import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
@@ -25,8 +26,21 @@ public class Client {
     private String url;
     private String authorizationToken;
 
+    public static final int DEFAULT_CONNECT_TIMEOUT_MS = 2_000;
+    public static final int DEFAULT_SOCKET_TIMEOUT_MS = 5_000;
+    private static final int CONNECTION_REQUEST_TIMEOUT_MS = 2_000;
+
     public Client(String url, String authorizationToken) {
-        this.httpClient = HttpClients.createDefault();
+        this(url, authorizationToken, DEFAULT_CONNECT_TIMEOUT_MS, DEFAULT_SOCKET_TIMEOUT_MS);
+    }
+
+    public Client(String url, String authorizationToken, int connectTimeoutMs, int socketTimeoutMs) {
+        RequestConfig requestConfig = RequestConfig.custom()
+                .setConnectTimeout(connectTimeoutMs)
+                .setSocketTimeout(socketTimeoutMs)
+                .setConnectionRequestTimeout(CONNECTION_REQUEST_TIMEOUT_MS)
+                .build();
+        this.httpClient = HttpClients.custom().setDefaultRequestConfig(requestConfig).build();
         this.url = url;
         this.authorizationToken = authorizationToken;
     }

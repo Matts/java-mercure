@@ -19,6 +19,10 @@ public class Publisher {
         this.httpClient = new Client(mercureHub, mercureToken);
     }
 
+    public Publisher(String mercureHub, String mercureToken, int connectTimeoutMs, int socketTimeoutMs) {
+        this.httpClient = new Client(mercureHub, mercureToken, connectTimeoutMs, socketTimeoutMs);
+    }
+
     public Message publish(Message message) throws UnauthorizedPublisherException, PublishRejectedException,
             HubNotFoundException {
         HashMap<String,String> parameters = new HashMap<String, String>();
