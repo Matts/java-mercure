@@ -2,7 +2,9 @@ package io.github.matts.mercure.auth;
 
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.security.Keys;
+
+import java.nio.charset.StandardCharsets;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -14,12 +16,13 @@ public class JWTFactory {
         Map<String, Object> jwtClaims = new HashMap<>();
         jwtClaims.put("mercure", mercureClaim);
 
+        // Mercure hub keys are raw strings (not Base64); jjwt 0.12+ requires >= 32 bytes for HS256.
         return Jwts.builder()
-                .setClaims(jwtClaims)
-                .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(expiration))
-                .signWith(SignatureAlgorithm.HS256, secret.getBytes())
-                .setHeaderParam("typ", "JWT");
+                .header().add("typ", "JWT").and()
+                .claims(jwtClaims)
+                .issuedAt(new Date(System.currentTimeMillis()))
+                .expiration(new Date(expiration))
+                .signWith(Keys.hmacShaKeyFor(secret.getBytes(StandardCharsets.UTF_8)), Jwts.SIG.HS256);
     }
 
     public static String createToken(MercureClaim mercureClaim, long expiration, String secret) {
